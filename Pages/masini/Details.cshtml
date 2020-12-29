@@ -1,0 +1,43 @@
+﻿@page
+@model proiect.Pages.masini.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>masina</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.masina.marca)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.masina.marca)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.masina.model)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.masina.model)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.masina.pret)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.masina.pret)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.masina.PublishingDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.masina.PublishingDate)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.masina.id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

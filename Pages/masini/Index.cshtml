@@ -1,0 +1,62 @@
+﻿@page
+@model proiect.Pages.masini.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Masini</h1>
+
+<p>
+    <a asp-page="Create">Adaugare masina</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.masina[0].marca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.masina[0].model)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.masina[0].pret)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.masina[0].PublishingDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.masina[0].Dealer.DealerName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.masina) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.marca)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pret)
+            </td>
+          
+            <td>
+                @Html.DisplayFor(modelItem => item.PublishingDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dealer.DealerName)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.id">Editare</a> |
+                <a asp-page="./Details" asp-route-id="@item.id">Detalii</a> |
+                <a asp-page="./Delete" asp-route-id="@item.id">Stergere</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
